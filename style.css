@@ -1,0 +1,233 @@
+/* --- إعدادات الصفحة الأساسية والخلفية --- */
+body {
+    /* تأكد من اسم الصورة بتاعتك هنا */
+    background-image: url('Gemini_Generated_Image_km2u52km2u52km2u.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+/* --- الصندوق الزجاجي (الكونتينر) - تعديل الشكل الجديد --- */
+.cyber-container {
+    /* خلفية أغمق قليلاً لتوضيح اللوجو */
+    background: rgba(5, 10, 20, 0.85);
+    
+    /* تأثير الضبابية */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* قص الزوايا لعمل شكل مستقبلي */
+    clip-path: polygon(
+        0% 15px, 
+        15px 0%, 
+        100% 0%, 
+        100% calc(100% - 15px), 
+        calc(100% - 15px) 100%, 
+        0% 100%
+    );
+    
+    /* حدود جانبية نيون بدلاً من الإطار الكامل */
+    border-left: 3px solid #00eaff;
+    border-right: 3px solid #ff00ff;
+    border-top: none;
+    border-bottom: none;
+
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
+        
+    /* إلغاء الـ border-radius القديم لأننا استخدمنا clip-path */
+    /* border-radius: 20px; */ 
+
+    padding: 50px 30px; /* زيادة الـ padding عشان الشكل الجديد */
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+
+    /* إضافة خلفية شبكية خفيفة داخل الصندوق */
+    background-image: linear-gradient(rgba(0, 234, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 234, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* --- تنسيق اللوجو والنصوص --- */
+.cyber-logo {
+    font-size: 5em;
+    font-weight: 900;
+    color: #fff;
+    position: relative;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+    margin: 0; /* إزالة الهوامش الزائدة */
+}
+
+.cyber-subtitle {
+    font-size: 1.2em;
+    color: #00eaff;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* --- منطقة الإدخال --- */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#todo-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #00eaff;
+    padding: 15px;
+    /* تعديل الحواف لتناسب الكونتينر */
+    border-radius: 5px;
+    clip-path: polygon(0% 5px, 5px 0%, 100% 0%, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0% 100%);
+    
+    color: #fff;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+#todo-input:focus {
+    box-shadow: 0 0 15px #00eaff;
+    border-color: #ff00ff;
+}
+
+#add-btn {
+    background: linear-gradient(45deg, #00eaff, #ff00ff);
+    border: none;
+    width: 50px;
+    font-size: 1.5em;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* --- تنسيق القائمة --- */
+.cyber-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cyber-list::-webkit-scrollbar { width: 5px; }
+.cyber-list::-webkit-scrollbar-thumb { background: #00eaff; border-radius: 10px; }
+.cyber-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+
+.todo-item {
+    background: rgba(0, 234, 255, 0.08);
+    margin-bottom: 15px;
+    padding: 15px;
+    /* حواف مقصوصة للعناصر أيضاً */
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%);
+    border-right: 3px solid #00eaff;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    animation: glowIn 0.5s ease-out;
+}
+
+.todo-item:hover {
+    background: rgba(0, 234, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+    transform: translateX(-5px); /* حركة بسيطة عند الهوفر */
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    border-right-color: #ff00ff;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    transform: scale(1.2);
+}
+
+@keyframes glowIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- تأثير الجليتش المحسن --- */
+.cyber-logo::before,
+.cyber-logo::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* تعديل هام: الخلفية لازم تكون نفس لون الكونتينر عشان تندمج */
+    background: rgba(5, 10, 20, 0.85); 
+    /* لو كانت #000 زي الكود القديم هتظهر مربعات سوداء */
+}
+
+/* الطبقة الأولى (لون سماوي) */
+.cyber-logo::before {
+    left: 2px;
+    text-shadow: -2px 0 #00eaff; /* زيادة الإزاحة قليلاً */
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+/* الطبقة الثانية (لون فوشيا) */
+.cyber-logo::after {
+    left: -2px;
+    text-shadow: -2px 0 #ff00ff; /* زيادة الإزاحة قليلاً */
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+/* --- حركات الأنيميشن --- */
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 30px, 0); }
+    20% { clip: rect(80px, 9999px, 100px, 0); }
+    40% { clip: rect(10px, 9999px, 50px, 0); }
+    60% { clip: rect(60px, 9999px, 80px, 0); }
+    80% { clip: rect(20px, 9999px, 60px, 0); }
+    100% { clip: rect(90px, 9999px, 120px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(60px, 9999px, 90px, 0); }
+    20% { clip: rect(10px, 9999px, 40px, 0); }
+    40% { clip: rect(50px, 9999px, 70px, 0); }
+    60% { clip: rect(20px, 9999px, 30px, 0); }
+    80% { clip: rect(80px, 9999px, 100px, 0); }
+    100% { clip: rect(30px, 9999px, 50px, 0); }
+}
