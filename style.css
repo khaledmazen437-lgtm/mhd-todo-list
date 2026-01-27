@@ -1,6 +1,6 @@
 /* --- إعدادات الصفحة الأساسية والخلفية --- */
 body {
-    /* تأكد من اسم الصورة بتاعتك هنا */
+    
     background-image: url('Gemini_Generated_Image_km2u52km2u52km2u.png'); 
     background-size: cover;
     background-position: center;
@@ -16,16 +16,16 @@ body {
     overflow: hidden;
 }
 
-/* --- الصندوق الزجاجي (الكونتينر) - تعديل الشكل الجديد --- */
+
 .cyber-container {
-    /* خلفية أغمق قليلاً لتوضيح اللوجو */
+    
     background: rgba(5, 10, 20, 0.85);
     
-    /* تأثير الضبابية */
+    
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     
-    /* قص الزوايا لعمل شكل مستقبلي */
+    
     clip-path: polygon(
         0% 15px, 
         15px 0%, 
@@ -35,7 +35,7 @@ body {
         0% 100%
     );
     
-    /* حدود جانبية نيون بدلاً من الإطار الكامل */
+    
     border-left: 3px solid #00eaff;
     border-right: 3px solid #ff00ff;
     border-top: none;
@@ -43,17 +43,16 @@ body {
 
     box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
         
-    /* إلغاء الـ border-radius القديم لأننا استخدمنا clip-path */
-    /* border-radius: 20px; */ 
+     
 
-    padding: 50px 30px; /* زيادة الـ padding عشان الشكل الجديد */
+    padding: 50px 30px; 
     width: 90%;
     max-width: 500px;
     text-align: center;
     color: #fff;
     position: relative;
 
-    /* إضافة خلفية شبكية خفيفة داخل الصندوق */
+    
     background-image: linear-gradient(rgba(0, 234, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 234, 255, 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -92,7 +91,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #00eaff;
     padding: 15px;
-    /* تعديل الحواف لتناسب الكونتينر */
+    
     border-radius: 5px;
     clip-path: polygon(0% 5px, 5px 0%, 100% 0%, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0% 100%);
     
@@ -154,7 +153,7 @@ body {
 .todo-item:hover {
     background: rgba(0, 234, 255, 0.15);
     box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
-    transform: translateX(-5px); /* حركة بسيطة عند الهوفر */
+    transform: translateX(-5px); 
 }
 
 .todo-item.completed {
@@ -183,7 +182,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- تأثير الجليتش المحسن --- */
+/* ---تأثير المحسن --- */
 .cyber-logo::before,
 .cyber-logo::after {
     content: attr(data-text);
@@ -192,23 +191,23 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* تعديل هام: الخلفية لازم تكون نفس لون الكونتينر عشان تندمج */
+    
     background: rgba(5, 10, 20, 0.85); 
-    /* لو كانت #000 زي الكود القديم هتظهر مربعات سوداء */
+    
 }
 
-/* الطبقة الأولى (لون سماوي) */
+
 .cyber-logo::before {
     left: 2px;
-    text-shadow: -2px 0 #00eaff; /* زيادة الإزاحة قليلاً */
+    text-shadow: -2px 0 #00eaff; 
     clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
-/* الطبقة الثانية (لون فوشيا) */
+
 .cyber-logo::after {
     left: -2px;
-    text-shadow: -2px 0 #ff00ff; /* زيادة الإزاحة قليلاً */
+    text-shadow: -2px 0 #ff00ff; 
     clip: rect(85px, 550px, 140px, 0);
     animation: glitch-anim 2.5s infinite linear alternate-reverse;
 }

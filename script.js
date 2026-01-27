@@ -15,7 +15,7 @@ function addTask() {
         <button class="delete-btn">🗑️</button>
     `;
 
-    // التعليم كمكتمل عند الضغط
+    
     li.addEventListener('click', (e) => {
         if (e.target.tagName !== 'BUTTON') {
             li.classList.toggle('completed');
@@ -25,12 +25,12 @@ function addTask() {
     // الحذف
     li.querySelector('.delete-btn').addEventListener('click', () => {
         li.style.opacity = '0';
-        setTimeout(() => li.remove(), 300); // تأخير بسيط عشان الأنيميشن
+        setTimeout(() => li.remove(), 300); 
     });
 
-    // الإضافة للقائمة
+    
     todoList.appendChild(li);
-    input.value = ''; // تفريغ الخانة
+    input.value = ''; 
 }
 
 // تشغيل الأحداث
