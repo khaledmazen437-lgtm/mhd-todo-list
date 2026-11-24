@@ -1,12 +1,11 @@
-/* --- إعدادات الصفحة الأساسية والخلفية --- */
 body {
-    
-    background-image: url('Gemini_Generated_Image_km2u52km2u52km2u.png'); 
+
+    background-image: url('Gemini_Generated_Image_km2u52km2u52km2u.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+
     height: 100vh;
     margin: 0;
     display: flex;
@@ -16,49 +15,41 @@ body {
     overflow: hidden;
 }
 
-
 .cyber-container {
-    
+
     background: rgba(5, 10, 20, 0.85);
-    
-    
+
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    
-    
+
     clip-path: polygon(
-        0% 15px, 
-        15px 0%, 
-        100% 0%, 
-        100% calc(100% - 15px), 
-        calc(100% - 15px) 100%, 
+        0% 15px,
+        15px 0%,
+        100% 0%,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
         0% 100%
     );
-    
-    
+
     border-left: 3px solid #00eaff;
     border-right: 3px solid #ff00ff;
     border-top: none;
     border-bottom: none;
 
     box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
-        
-     
 
-    padding: 50px 30px; 
+    padding: 50px 30px;
     width: 90%;
     max-width: 500px;
     text-align: center;
     color: #fff;
     position: relative;
 
-    
     background-image: linear-gradient(rgba(0, 234, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 234, 255, 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
-/* --- تنسيق اللوجو والنصوص --- */
 .cyber-logo {
     font-size: 5em;
     font-weight: 900;
@@ -66,7 +57,7 @@ body {
     position: relative;
     letter-spacing: 5px;
     text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
-    margin: 0; /* إزالة الهوامش الزائدة */
+    margin: 0;
 }
 
 .cyber-subtitle {
@@ -78,7 +69,6 @@ body {
     text-transform: uppercase;
 }
 
-/* --- منطقة الإدخال --- */
 .input-area {
     display: flex;
     gap: 10px;
@@ -91,10 +81,10 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #00eaff;
     padding: 15px;
-    
+
     border-radius: 5px;
     clip-path: polygon(0% 5px, 5px 0%, 100% 0%, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0% 100%);
-    
+
     color: #fff;
     font-family: inherit;
     outline: none;
@@ -122,7 +112,6 @@ body {
     box-shadow: 0 0 20px #ff00ff;
 }
 
-/* --- تنسيق القائمة --- */
 .cyber-list {
     list-style: none;
     padding: 0;
@@ -138,10 +127,10 @@ body {
     background: rgba(0, 234, 255, 0.08);
     margin-bottom: 15px;
     padding: 15px;
-    /* حواف مقصوصة للعناصر أيضاً */
+
     clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%);
     border-right: 3px solid #00eaff;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -153,7 +142,7 @@ body {
 .todo-item:hover {
     background: rgba(0, 234, 255, 0.15);
     box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
-    transform: translateX(-5px); 
+    transform: translateX(-5px);
 }
 
 .todo-item.completed {
@@ -182,7 +171,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---تأثير المحسن --- */
 .cyber-logo::before,
 .cyber-logo::after {
     content: attr(data-text);
@@ -191,28 +179,25 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    
-    background: rgba(5, 10, 20, 0.85); 
-    
-}
 
+    background: rgba(5, 10, 20, 0.85);
+
+}
 
 .cyber-logo::before {
     left: 2px;
-    text-shadow: -2px 0 #00eaff; 
+    text-shadow: -2px 0 #00eaff;
     clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
-
 .cyber-logo::after {
     left: -2px;
-    text-shadow: -2px 0 #ff00ff; 
+    text-shadow: -2px 0 #ff00ff;
     clip: rect(85px, 550px, 140px, 0);
     animation: glitch-anim 2.5s infinite linear alternate-reverse;
 }
 
-/* --- حركات الأنيميشن --- */
 @keyframes glitch-anim {
     0% { clip: rect(10px, 9999px, 30px, 0); }
     20% { clip: rect(80px, 9999px, 100px, 0); }
